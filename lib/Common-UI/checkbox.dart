@@ -33,6 +33,7 @@ class CheckboxTitle extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     decoration: undleline ? TextDecoration.none: TextDecoration.underline,
+                    decorationStyle: TextDecorationStyle.dashed,
                     color: isDisable ? Colors.grey : null,
                   ),
                 ),
