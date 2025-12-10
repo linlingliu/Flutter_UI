@@ -4,6 +4,7 @@ import 'package:common_ui/Common-UI/empth_content.dart';
 import 'package:flutter/material.dart';
 import 'Common-UI/highlighted_text.dart';
 import 'Package:common_ui/Common-UI/checkbox.dart';
+import 'Common-UI/standard_dialog.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -58,6 +59,39 @@ class _HomePageState extends State<HomePage> {
             ),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              StandardDialog.show(
+                context: context,
+                title: '标准对话框',
+                content: '这是一个标准对话框的内容。您可以在这里放置一些文本信息。',
+                showCancel: true,
+                onCancel: () {
+                  print('点击了取消');
+                },
+                onConfirm: () {
+                  print('点击了确定');
+                },
+              );
+            },
+            child: const Text('显示标准对话框（带取消）'),
+          ),
+          const SizedBox(height: 12),
+          ElevatedButton(
+            onPressed: () {
+              StandardDialog.show(
+                context: context,
+                title: '提示',
+                content: '这是一个只有确定按钮的对话框。',
+                showCancel: false,
+                onConfirm: () {
+                  print('点击了确定');
+                },
+              );
+            },
+            child: const Text('显示标准对话框（仅确定）'),
           ),
           Spacer()
         ],
