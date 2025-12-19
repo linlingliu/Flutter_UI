@@ -133,7 +133,7 @@ class _RenderLeftRight extends RenderBox
         minWidth: 0,
         maxWidth: constraints.maxWidth - rightChildWidth,
       ),
-      parentUsesSize: false, // 左子节点大小变化不影响父容器（父容器尺寸已由约束决定）
+      parentUsesSize: true, // 需要访问 child.size，所以必须设置为 true
     );
     return child.size;
   }

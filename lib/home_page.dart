@@ -4,6 +4,7 @@ import 'package:common_ui/Common-UI/empth_content.dart';
 import 'package:flutter/material.dart';
 import 'Common-UI/gradient_button.dart';
 import 'Common-UI/highlighted_text.dart';
+import 'Common-UI/left_right_box.dart';
 import 'Package:common_ui/Common-UI/checkbox.dart';
 import 'Common-UI/standard_dialog.dart';
 
@@ -99,6 +100,24 @@ class _HomePageState extends State<HomePage> {
               print('按钮被点击');
             },
             child: Text('确认'),
+          ),
+          const SizedBox(height: 12),
+          LeftRightBox(
+            verticalAlign: VerticalAlign.center,
+            left: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('AAPL', style: TextStyle(fontWeight: FontWeight.bold)),
+                Text('苹果公司', style: TextStyle(color: Colors.grey)),
+              ],
+            ),
+            right: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text('\$182.63', style: TextStyle(fontSize: 16, color: Colors.green)),
+                Text('+2.4%', style: TextStyle(color: Colors.green)),
+              ],
+            ),
           ),
           Spacer()
         ],
