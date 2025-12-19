@@ -2,6 +2,7 @@ import 'package:common_ui/Common-UI/expandable_text.dart';
 import 'package:common_ui/Common-UI/title_value_row.dart';
 import 'package:common_ui/Common-UI/empth_content.dart';
 import 'package:flutter/material.dart';
+import 'Common-UI/gradient_button.dart';
 import 'Common-UI/highlighted_text.dart';
 import 'Package:common_ui/Common-UI/checkbox.dart';
 import 'Common-UI/standard_dialog.dart';
@@ -92,6 +93,12 @@ class _HomePageState extends State<HomePage> {
               );
             },
             child: const Text('显示标准对话框（仅确定）'),
+          ),
+          GradientButton(
+            onPressed: () {
+              print('按钮被点击');
+            },
+            child: Text('确认'),
           ),
           Spacer()
         ],
